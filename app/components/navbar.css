@@ -1,0 +1,21 @@
+.navbar {
+  @apply fixed top-0 w-full border-b border-border;
+  @apply bg-background/95 dark:bg-slate-950/95;
+  @apply backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  @apply px-4;
+}
+
+.navbar-brand {
+  @apply text-xl font-bold;
+  @apply text-foreground dark:text-white;
+}
+
+.navbar-link {
+  @apply text-muted-foreground hover:text-foreground transition-colors;
+  @apply dark:text-gray-400 dark:hover:text-white;
+}
+
+.navbar-container {
+  @apply container flex h-16 items-center;
+  @apply px-4;
+} 
