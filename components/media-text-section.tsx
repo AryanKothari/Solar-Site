@@ -63,7 +63,7 @@ const MediaTextSection: FC<MediaTextSectionProps> = ({
             </video>
           )}
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 px-8">
           <h2 className="text-3xl font-bold mb-4">{title}</h2>
           <p className="text-lg text-gray-600 mb-4">{description}</p>
           <button
