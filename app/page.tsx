@@ -1,5 +1,6 @@
 import TeamImage from "@/components/TeamImage";
 import HeroContent from "@/components/HeroContent";
+import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           <HeroContent />
         </div>
       </section>
+      <AboutSection />
       <section className="w-full py-24 bg-muted">
         <div className="container grid md:grid-cols-3 gap-8">
           {/* Add feature highlights here */}

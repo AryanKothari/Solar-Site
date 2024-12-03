@@ -3,15 +3,20 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function TeamImage() {
-  const [isBlurred, setIsBlurred] = useState(false);
+  const [blurAmount, setBlurAmount] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsBlurred(true);
-    }, 1000); // 2 seconds delay before blur
+    const handleScroll = () => {
+      const maxBlur = 10; // Maximum blur amount
+      const scrollPosition = window.scrollY;
+      const blur = Math.min(scrollPosition / 20, maxBlur); // Adjust divisor for sensitivity
+      setBlurAmount(blur);
+    };
 
-    return () => clearTimeout(timer);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -37,12 +42,10 @@ export default function TeamImage() {
 
       {/* Blurred overlay */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${
-          isBlurred ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 transition-opacity duration-1000`}
         style={{
-          backdropFilter: `blur(5px)`,
-          WebkitBackdropFilter: `blur(5px)`,
+          backdropFilter: `blur(${blurAmount}px)`,
+          WebkitBackdropFilter: `blur(${blurAmount}px)`,
           maskImage: `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, transparent, black)`,
           WebkitMaskImage: `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, transparent, black)`,
         }}
