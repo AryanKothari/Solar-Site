@@ -24,7 +24,7 @@ export default function AboutSection() {
                 mediaType="video"
                 mediaSrc="/videos/proto.mov" 
                 title="First Prototype"
-                description="After pivoting from two different original ideas, our team came together to SPRINT on a new idea that we could all get excited about and collaborate on."
+                description=""
                 imageAlt="team"
                 reverse={false}
                 videoHeight="size-3/5"
@@ -32,6 +32,7 @@ export default function AboutSection() {
                 muted={true}
                 playsInline={true}
                 controls={false}
+                loop={true}
                 
                 expandedContent="Initial products that we considered included a wearable emergency alert system for surfers as well as a rescue buoy that would both serve as an alert system and a flotation device. We chose against these ideas because of the issue with wireless communication underwater to above water due to the large difference in index of refraction between water and air. As for the buoy, we realized that really it would have been three products in one, we would have needed to develop a buoy that could house and charge a robot that could seek and rescue people in distress in the water."
             />
