@@ -1,6 +1,6 @@
 .navbar {
   @apply fixed top-0 w-full border-b border-border;
-  @apply bg-background/95 dark:bg-slate-950/95;
+  @apply bg-background bg-neutral-950;
   @apply backdrop-blur supports-[backdrop-filter]:bg-background/60;
   @apply px-4;
 }
@@ -8,6 +8,10 @@
 .navbar-brand {
   @apply text-xl font-bold;
   @apply text-foreground dark:text-white;
+}
+
+.navbar-brand-large {
+  font-size: 1.5rem;
 }
 
 .navbar-link {

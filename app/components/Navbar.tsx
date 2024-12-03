@@ -4,10 +4,10 @@ import "./navbar.css"
 
 export function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
+    <nav className="navbar z-50">
+      <div className="navbar-container mx-auto">
         <div className="mr-8">
-          <Link href="/" className="navbar-brand">ProjectName</Link>
+          <Link href="/" className="navbar-brand navbar-brand-large">Root</Link>
         </div>
         <div className="flex gap-6">
           <Link href="/about" className="navbar-link">About</Link>
