@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ProjectOverview from "./ProjectOverview";
-import ProjectComponents from "./ProjectComponents";
+// import ProjectComponents from "./ProjectComponents";
 import EngineeringProjectShowcase from "@/components/engineering-project-showcase";
 
 export default function ProjectPage() {

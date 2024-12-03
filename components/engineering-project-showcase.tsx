@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+// import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
@@ -40,7 +40,7 @@ const projectParts: ProjectPart[] = [
 ]
 
 export default function EngineeringProjectShowcase() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  // const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -53,8 +53,8 @@ export default function EngineeringProjectShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
-            onHoverStart={() => setHoveredId(part.id)}
-            onHoverEnd={() => setHoveredId(null)}
+            // onHoverStart={() => setHoveredId(part.id)}
+            // onHoverEnd={() => setHoveredId(null)}
           >
             <Card className="overflow-hidden">
               <CardHeader className="p-0">

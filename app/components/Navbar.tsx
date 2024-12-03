@@ -15,7 +15,9 @@ export function Navbar() {
           <Link href="/project" className="navbar-link">Project</Link>
         </div>
         <div className="ml-auto">
-          <Button variant="default">Contact Us</Button>
+          <Button asChild variant="default">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </div>
       </div>
     </nav>
