@@ -1,4 +1,4 @@
-import MediaTextSection from './media-text-section';
+import MediaTextSection from '@/components/media-text-section';
 
 export default function AboutSection() {
   return (
@@ -8,7 +8,7 @@ export default function AboutSection() {
       title="Individual and Team Goals"
       description="Before working together on this project, our team outlined some goals for our product and ourselves"
       imageAlt="team"
-      expandedContent= "Additional content here"
+      expandedContent= "We knew we wanted to "
     />
   );
 } 
