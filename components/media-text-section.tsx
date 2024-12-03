@@ -11,6 +11,12 @@ interface MediaTextSectionProps {
   expandedContent: string
   imageAlt?: string
   reverse?: boolean
+  videoHeight?: string
+  autoPlay?: boolean
+  muted?: boolean
+  playsInline?: boolean
+  controls?: boolean
+  loop?: boolean
 }
 
 const MediaTextSection: FC<MediaTextSectionProps> = ({
@@ -21,6 +27,12 @@ const MediaTextSection: FC<MediaTextSectionProps> = ({
   expandedContent,
   imageAlt = '',
   reverse = false,
+  videoHeight = '',
+  autoPlay = false,
+  muted = false,
+  playsInline = false,
+  controls = false,
+  loop = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
@@ -39,9 +51,13 @@ const MediaTextSection: FC<MediaTextSectionProps> = ({
           ) : (
             <video
               src={mediaSrc}
-              controls
-              className="rounded-lg w-full h-full"
+              className={`rounded-lg  ${videoHeight}`}
               aria-label={title}
+              autoPlay={autoPlay}
+              muted={muted}
+              playsInline={playsInline}
+              controls={controls}
+              loop ={loop}
             >
               Your browser does not support the video tag.
             </video>
