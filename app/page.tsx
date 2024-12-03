@@ -11,7 +11,10 @@ export default function Home() {
           <HeroContent />
         </div>
       </section>
-      <AboutSection />
+      <div id="about" className="container py-12">
+        <h2 className="text-5xl font-bold text-center mt-12 mb-12">About the Process</h2>
+        <AboutSection />
+      </div>
       <section className="w-full py-24 bg-muted">
         <div className="container grid md:grid-cols-3 gap-8">
           {/* Add feature highlights here */}

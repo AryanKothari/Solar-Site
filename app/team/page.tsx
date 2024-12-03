@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Minha Kim",
     role: "Mechanical Engineer",
-    bio: "Shoot",
+    bio: "Engineer dedicated to solving intricate problems with efficiency and creativity, using technical expertise to design.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFdIk_PCHNJSQ/profile-displayphoto-shrink_800_800/B4DZOE.aLCHMAc-/0/1733102773569?e=1738800000&v=beta&t=i4vP1jhkpy89OiovECeed37PYNvsR9xWnvqOHZl6mdU",
     link: "https://www.linkedin.com/in/minha-kim-121ab41aa/"
   },
@@ -28,9 +28,9 @@ const teamMembers = [
     link: "https://www.linkedin.com/in/akothari12/"
   },
   {
-    name: "Joao Carvalho",
-    role: "CFO - Chief Fun Officer",
-    bio: "Creative designer focused on crafting beautiful and intuitive user experiences. Creative designer focused on crafting beautiful and intuitive user experiences.",
+    name: "João Carvalho",
+    role: "Electrical Engineer",
+    bio: "Solving problems by asking questions and building things.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQG0idakwSiaPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724339416510?e=1738800000&v=beta&t=6HjlXpwMeR_tMm4i3y32dWZOgcxhDSY51rqS0QK9iNA",
     link: "https://joaomcarvalho.com"
   },
@@ -45,7 +45,7 @@ function ExpandableText({ text }: { text: string }) {
       <p className={`text-muted-foreground ${!isExpanded ? "line-clamp-2" : ""}`}>
         {text}
       </p>
-      {text.length > 50 && (
+      {text.length > 70 && (
         <button
           onClick={(e) => {
             e.preventDefault(); // Prevent the card's link from triggering

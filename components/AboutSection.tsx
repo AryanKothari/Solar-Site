@@ -2,7 +2,7 @@ import MediaTextSection from '@/components/media-text-section';
 
 export default function AboutSection() {
     return (
-        <div className="container mx-auto py-24">
+        <div className="container mx-auto ">
             <MediaTextSection
                 mediaType="image"
                 mediaSrc="/photos/sprint.jpeg"
