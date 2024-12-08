@@ -53,7 +53,7 @@ export default function ProjectPage() {
             }`}
           >
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter">
-              The Root yup
+              The Root
             </h1>
           </div>
         </div>
