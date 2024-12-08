@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProjectOverview from "./ProjectOverview";
 // import ProjectComponents from "./ProjectComponents";
 import EngineeringProjectShowcase from "@/components/engineering-project-showcase";
+import ThreeDViewer from "./3DViewer";
 
 export default function ProjectPage() {
   const [showTitle, setShowTitle] = useState(false);
@@ -61,7 +62,8 @@ export default function ProjectPage() {
       <div className="relative bg-background">
         <div className="container mx-auto py-24">
           <ProjectOverview />
-          {/* <ProjectComponents /> */}
+          {/* <ProjectComponents />  old component tsx */}
+          <ThreeDViewer modelPath="/models/untitled.glb" />
           <EngineeringProjectShowcase />
         </div>
       </div>
