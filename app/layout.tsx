@@ -19,6 +19,10 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "The Root",
   description: "Project portfolio page for The Root",
+  icons: {
+    icon: "/favicon.ico",
+    apple: '/apple-touch-icon.png'
+  },
 };
 
 export default function RootLayout({
