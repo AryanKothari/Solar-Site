@@ -11,28 +11,32 @@ const teamMembers = [
     role: "Mechanical Engineer",
     bio: "Engineer dedicated to solving intricate problems with efficiency and creativity, using technical expertise to design.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFdIk_PCHNJSQ/profile-displayphoto-shrink_800_800/B4DZOE.aLCHMAc-/0/1733102773569?e=1738800000&v=beta&t=i4vP1jhkpy89OiovECeed37PYNvsR9xWnvqOHZl6mdU",
-    link: "https://www.linkedin.com/in/minha-kim-121ab41aa/"
+    link: "https://www.linkedin.com/in/minha-kim-121ab41aa/",
+    reflection: "Working on ROOT allowed me to apply my engineering skills to a real-world problem while collaborating with an amazing team."
   },
   {
     name: "Sarah Kate Ashton",
     role: "Mechanical Engineer",
     bio: "Creative designer focused on crafting beautiful and intuitive user experiences.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFv_VYJtDNjWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719348520061?e=1738800000&v=beta&t=VcOG3UiB3serTCWTulpBRkcPU5YMQ5O5eBzZ9qIi97o",
-    link: "https://www.linkedin.com/in/sarah-kate-ashton-66541827a/"
+    link: "https://www.linkedin.com/in/sarah-kate-ashton-66541827a/",
+    reflection: "Working on ROOT allowed me to apply my engineering skills to a real-world problem while collaborating with an amazing team."
   },
   {
     name: "Aryan Kothari",
-    role: "Computer Science Major",
-    bio: "Creative designer focused on crafting beautiful and intuitive user experiences.",
+    role: "Computer Scientist",
+    bio: "My primary responsibility within the group was to develop the SMART component, which we decided would be represented by the LED matrices. To achieve this, I configured the matrices using an ESP32 and its Bluetooth capabilities and created a mobile app that enables users to change the lighting modes. Additionally, I served as the primary point of communication with the MEMs, ensuring collaboration between teams.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHaxEsgGMHZ9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727707160195?e=1738800000&v=beta&t=WMSTGmQ9r_ww_RapvHM7Blskb_eRFXT1fGJHtkvl89E",
-    link: "https://www.linkedin.com/in/akothari12/"
+    link: "https://www.linkedin.com/in/akothari12/",
+    reflection: "As a Trinity student, I was genuinely excited when I came across this class—it felt like a rare opportunity to explore electrical and hardware components, areas I hadn't had the chance to dive into during my time at Duke. This course has been incredibly rewarding in many ways. Some standout aspects for me include gaining hands-on experience with circuits, navigating the challenges and triumphs of working in a team setting with responsibilities and deadlines, and creating something with the potential for meaningful impact. Although I faced moments of uncertainty and confusion, the overall experience was an invaluable learning journey."
   },
   {
     name: "João Carvalho",
     role: "Electrical Engineer",
     bio: "Solving problems by asking questions and building things.",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQG0idakwSiaPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724339416510?e=1738800000&v=beta&t=6HjlXpwMeR_tMm4i3y32dWZOgcxhDSY51rqS0QK9iNA",
-    link: "https://joaomcarvalho.com"
+    link: "https://joaomcarvalho.com",
+    reflection: "Working on ROOT allowed me to apply my engineering skills to a real-world problem while collaborating with an amazing team."
   },
   // Add more team members as needed
 ];
@@ -96,6 +100,9 @@ export default function TeamPage() {
               </CardHeader>
               <CardContent>
                 <ExpandableText text={member.bio} />
+                <Separator className="my-4" />
+                <h3 className="text-lg font-semibold">Reflection</h3>
+                <ExpandableText text={member.reflection} />
               </CardContent>
             </Card>
           </a>
