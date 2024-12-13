@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import ProjectOverview from "./ProjectOverview";
 // import ProjectComponents from "./ProjectComponents";
-import EngineeringProjectShowcase from "@/components/engineering-project-showcase";
+// import EngineeringProjectShowcase from "@/components/engineering-project-showcase";
 import ThreeDViewer from "./3DViewer";
 import {ProjectDetails} from "@/components/project-details";
 
