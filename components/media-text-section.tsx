@@ -115,7 +115,7 @@ const MediaTextSection: FC<MediaTextSectionProps> = ({
     if (mediaType === 'image') {
       return (
         <Image
-          src={mediaSrc}
+          src={mediaSrc as string}
           alt={imageAlt}
           width={600}
           height={400}
@@ -126,7 +126,7 @@ const MediaTextSection: FC<MediaTextSectionProps> = ({
 
     return (
       <video
-        src={mediaSrc}
+        src={mediaSrc as string}
         className={`rounded-lg ${videoHeight}`}
         aria-label={title}
         autoPlay={autoPlay}
