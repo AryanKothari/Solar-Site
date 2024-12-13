@@ -22,7 +22,7 @@ const projectParts: ProjectPart[] = [
   {
     id: 2,
     title: "Ryobi Brushed Drill",
-    description: "We took apart the drill and user the motor, gearbox, and chuck in our final design.",
+    description: "We took apart the drill and used the motor, gearbox, and chuck in our final design.",
     imageUrl: "https://images.thdstatic.com/productImages/30cdd64e-b560-437c-8f90-3da447ed73d6/svn/ryobi-power-drills-pcl206b-64_600.jpg"
   },
   {
@@ -35,6 +35,60 @@ const projectParts: ProjectPart[] = [
     id: 4,
     title: "ESP32 Microcontroller",
     description: "Handles wireless communication with app and controls the LED matrices.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 5,
+    title: "8020 Aluminum Extrusion",
+    description: "Chose to use aluminum extrusions for main structure of project in order to ensure components within the encasing would be held in place.",
+    imageUrl: "https://m.media-amazon.com/images/I/51+JGnPGO9L.jpg"
+  }, 
+  {
+    id: 6,
+    title: "LED Matrix",
+    description: "Connected to an app to control the settings of the LED display: UV index, ",
+    imageUrl: "https://m.media-amazon.com/images/I/51+JGnPGO9L.jpg"
+  }, 
+  {
+    id: 7,
+    title: "Battery Holder",
+    description: "Custom 3D printed battery holder in order to hold battery within structure.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  }, 
+  {
+    id: 8,
+    title: "Motor Mount",
+    description: "Custom 3D printed motor mount to stabilize motor.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 9,
+    title: "Electronics Holder",
+    description: "Custom 3D printed electronics holder to organize and keep electrical components in place.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 10,
+    title: "Cap",
+    description: "Custom 3D printed cap to hold power button, up/down buttons, and the attachment locking mechanism.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 11,
+    title: "LED Matrix Window",
+    description: "Custom 3D printed with clear PLA to create a window for the LED matrices.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 12,
+    title: "Bottom Panel",
+    description: "Laser cut wood to keep spike cocentric and stable while spinning.",
+    imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    id: 13,
+    title: "Panels",
+    description: "Laser cut wood to encase the product.",
     imageUrl: "https://m.media-amazon.com/images/I/61o2ZUzB4XL._AC_UF894,1000_QL80_.jpg"
   }
 ]

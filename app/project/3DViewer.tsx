@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef} from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader, GLTF } from 'three/addons/loaders/GLTFLoader.js';
@@ -8,12 +8,14 @@ interface ThreeDViewerProps {
   modelPath: string;
   width?: number;
   height?: number;
+  title?: string;
 }
 
 const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
   modelPath,
   width = 800,
   height = 600,
+  title = 'Root Assembly',
 }) => {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +26,12 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf0f0f0);
 
+    // Add grid helper
+    const size = 10;
+    const divisions = 10;
+    const gridHelper = new THREE.GridHelper(size, divisions);
+    scene.add(gridHelper);
+
     // Camera setup
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 5;
@@ -33,6 +41,10 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
     renderer.setSize(width, height);
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
+
+    // Center the renderer's canvas
+    renderer.domElement.style.margin = 'auto';
+    renderer.domElement.style.display = 'block';
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -73,9 +85,9 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
     const animate = () => {
       requestAnimationFrame(animate);
       
-      // Add rotation to the entire scene
+      // Always rotate when model is loaded
       if (gltf?.scene) {
-        gltf.scene.rotation.y += 0.005; // Adjust this value to control rotation speed
+        gltf.scene.rotation.y += 0.005;
       }
       
       controls.update();
@@ -91,17 +103,43 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
   }, [modelPath, width, height]);
 
   return (
-    <div 
-      ref={mountRef}
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '0 auto',
-        width: '100%',
-        height: '100%'
-      }}
-    />
+    <div style={{ 
+      width: '100%', 
+      height: '100%',
+      position: 'relative',
+      borderRadius: '16px',
+      padding: '0 0 32px 0',
+      overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <div 
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 1,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          padding: '8px 16px',
+          borderRadius: '20px',
+          color: 'white'
+        }}
+      >
+        <span>{title}</span>
+      </div>
+      <div 
+        ref={mountRef}
+        style={{
+          width: width,
+          height: height,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      />
+    </div>
   );
 };
 
