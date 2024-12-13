@@ -1,6 +1,6 @@
 import TeamImage from "@/components/TeamImage";
 import HeroContent from "@/components/HeroContent";
-import AboutSection from "@/components/AboutSection";
+// import AboutSection from "@/components/AboutSection";
 import ProductPage from "./product/page";
 
 export default function Home() {
