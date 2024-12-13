@@ -12,7 +12,7 @@ export default function AboutPage() {
                     title="Individual and Team Goals"
                     description="Before working together on this project, our team outlined some goals for our product and ourselves."
                     imageAlt="team"
-                    expandedContent="We knew we wanted to have a finished product that we could be proud of, moving beyond the prototype phase to something an end user could actually use."
+                    expandedContent="We knew we wanted to create a finished product that we could be proud of—something that moved beyond the prototype phase to a high-quality, functional design that an end user could envision purchasing. Our Product Design Project Plan was built around key individual and team goals that drove every phase of development, primarily focused on ensuring the product was not only functional but also aesthetically pleasing and polished—something that could theoretically be sold in stores and leave a lasting impression."
                 />
                 <MediaTextSection
                     mediaType="image"
@@ -21,7 +21,7 @@ export default function AboutPage() {
                     description="After pivoting from two different original ideas, our team came together to SPRINT on a new idea that we could all get excited about and collaborate on."
                     imageAlt="team"
                     reverse={true}
-                    expandedContent="Initial products we considered included a wearable emergency alert system for surfers and a rescue buoy serving as both an alert system and a flotation device. We decided against these ideas due to underwater-to-surface communication challenges and the complexity of developing a multifunctional buoy system that combined housing, charging, and rescue functionalities."
+                    expandedContent="Initial products we considered included a wearable emergency alert system for surfers and a rescue buoy serving as both an alert system and a flotation device. We decided against these ideas due to underwater-to-surface communication challenges and the complexity of developing a multifunctional buoy system that combined housing, charging, and rescue functionalities. We finally decided on ROOT, a smart beach spike designed to enhance the beach experience by providing both functionality and interactivity. ROOT can securely hold items like umbrellas and tables while featuring an LED matrix controlled via a mobile app, offering various modes such as UV Index, Party, and Relax. This idea struck the perfect balance between feasibility and innovation, allowing us to combine technical skills, user-centric design, and real-world applicability."
                 />
                 <MediaTextSection
                     mediaType="video"
