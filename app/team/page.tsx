@@ -10,6 +10,7 @@ const teamMembers = [
     name: "Minha Kim",
     role: "Mechanical Engineer",
     bio: "Engineer dedicated to solving intricate problems with efficiency and creativity, using technical expertise to design.",
+    skills: ["CAD Design", "Mechanical Design", "Project Management", "3D Printing"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFdIk_PCHNJSQ/profile-displayphoto-shrink_800_800/B4DZOE.aLCHMAc-/0/1733102773569?e=1738800000&v=beta&t=i4vP1jhkpy89OiovECeed37PYNvsR9xWnvqOHZl6mdU",
     link: "https://www.linkedin.com/in/minha-kim-121ab41aa/"
   },
@@ -17,6 +18,7 @@ const teamMembers = [
     name: "Sarah Kate Ashton",
     role: "Mechanical Engineer",
     bio: "Creative designer focused on crafting beautiful and intuitive user experiences.",
+    skills: ["Mechanical Design", "Product Development", "Prototyping", "Technical Documentation"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFv_VYJtDNjWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719348520061?e=1738800000&v=beta&t=VcOG3UiB3serTCWTulpBRkcPU5YMQ5O5eBzZ9qIi97o",
     link: "https://www.linkedin.com/in/sarah-kate-ashton-66541827a/"
   },
@@ -24,6 +26,7 @@ const teamMembers = [
     name: "Aryan Kothari",
     role: "UI/UX Designer",
     bio: "Creative designer focused on crafting beautiful and intuitive user experiences.",
+    skills: ["UI/UX Design", "User Research", "Prototyping", "Wireframing"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHaxEsgGMHZ9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727707160195?e=1738800000&v=beta&t=WMSTGmQ9r_ww_RapvHM7Blskb_eRFXT1fGJHtkvl89E",
     link: "https://www.linkedin.com/in/akothari12/"
   },
@@ -31,6 +34,7 @@ const teamMembers = [
     name: "João Carvalho",
     role: "Electrical Engineer",
     bio: "Solving problems by asking questions and building things.",
+    skills: ["Electrical Design", "Circuit Analysis", "PCB Design", "CAD Design", "3D Printing", "Web Development"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQG0idakwSiaPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724339416510?e=1738800000&v=beta&t=6HjlXpwMeR_tMm4i3y32dWZOgcxhDSY51rqS0QK9iNA",
     link: "https://joaomcarvalho.com"
   },
@@ -94,8 +98,21 @@ export default function TeamPage() {
                 <CardTitle>{member.name}</CardTitle>
                 <CardDescription>{member.role}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <ExpandableText text={member.bio} />
+                <div>
+                  <h4 className="font-semibold mb-2">Skills used on this project</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {member.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="bg-secondary text-secondary-foreground px-2 py-1 rounded-md text-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </a>

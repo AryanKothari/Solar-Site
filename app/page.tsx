@@ -11,6 +11,11 @@ export default function Home() {
           <HeroContent />
         </div>
       </section>
+      <div id="product" className="container py-12">
+        <h2 className="text-5xl font-bold text-center mt-12 mb-12">Product</h2>
+        {/* <ProductDetails /> */}
+      </div>
+
       <div id="about" className="container py-12">
         <h2 className="text-5xl font-bold text-center mt-12 mb-12">About the Process</h2>
         <AboutSection />
