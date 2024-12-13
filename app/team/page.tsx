@@ -24,7 +24,7 @@ const teamMembers = [
   },
   {
     name: "Aryan Kothari",
-    role: "UI/UX Designer",
+    role: "SMART Component",
     bio: "Creative designer focused on crafting beautiful and intuitive user experiences.",
     skills: ["UI/UX Design", "User Research", "Prototyping", "Wireframing"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQHaxEsgGMHZ9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727707160195?e=1738800000&v=beta&t=WMSTGmQ9r_ww_RapvHM7Blskb_eRFXT1fGJHtkvl89E",
