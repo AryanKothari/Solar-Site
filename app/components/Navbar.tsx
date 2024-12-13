@@ -10,7 +10,7 @@ export function Navbar() {
           <Link href="/" className="navbar-brand navbar-brand-large">Root</Link>
         </div>
         <div className="flex gap-6">
-          <Link href="/#about" className="navbar-link">About</Link>
+          <Link href="/about" className="navbar-link">About</Link>
           <Link href="/team" className="navbar-link">Team</Link>
           <Link href="/project" className="navbar-link">Project</Link>
         </div>

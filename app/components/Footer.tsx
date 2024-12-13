@@ -58,10 +58,10 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="https://github.com" className="text-muted-foreground hover:text-primary">
+              <Link href="https://github.com/Joaomc15" className="text-muted-foreground hover:text-primary">
                 <Github className="h-5 w-5" />
               </Link>
-              <Link href="https://linkedin.com" className="text-muted-foreground hover:text-primary">
+              <Link href="https://www.linkedin.com/in/joaomcarv/" className="text-muted-foreground hover:text-primary">
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link href="mailto:joao.carvalho@duke.edu" className="text-muted-foreground hover:text-primary">
