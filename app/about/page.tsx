@@ -5,14 +5,14 @@ export default function AboutPage() {
         <div id="about" className="container max-w-7xl mx-auto py-12">
             <h2 className="text-5xl font-bold text-center mt-12 mb-12">About the Process</h2>
 
-            <div className="container mx-auto ">
+            <div className="container mx-auto">
                 <MediaTextSection
                     mediaType="image"
                     mediaSrc="/photos/sprint.jpeg"
                     title="Individual and Team Goals"
-                    description="Before working together on this project, our team outlined some goals for our product and ourselves"
+                    description="Before working together on this project, our team outlined some goals for our product and ourselves."
                     imageAlt="team"
-                    expandedContent="We knew we wanted to have a finished product that we could be proud of knowing we have moved past the prototype phase and an end user could use. "
+                    expandedContent="We knew we wanted to have a finished product that we could be proud of, moving beyond the prototype phase to something an end user could actually use."
                 />
                 <MediaTextSection
                     mediaType="image"
@@ -21,7 +21,7 @@ export default function AboutPage() {
                     description="After pivoting from two different original ideas, our team came together to SPRINT on a new idea that we could all get excited about and collaborate on."
                     imageAlt="team"
                     reverse={true}
-                    expandedContent="Initial products that we considered included a wearable emergency alert system for surfers as well as a rescue buoy that would both serve as an alert system and a flotation device. We chose against these ideas because of the issue with wireless communication underwater to above water due to the large difference in index of refraction between water and air. As for the buoy, we realized that really it would have been three products in one, we would have needed to develop a buoy that could house and charge a robot that could seek and rescue people in distress in the water."
+                    expandedContent="Initial products we considered included a wearable emergency alert system for surfers and a rescue buoy serving as both an alert system and a flotation device. We decided against these ideas due to underwater-to-surface communication challenges and the complexity of developing a multifunctional buoy system that combined housing, charging, and rescue functionalities."
                 />
                 <MediaTextSection
                     mediaType="video"
@@ -36,27 +36,22 @@ export default function AboutPage() {
                     playsInline={true}
                     controls={false}
                     loop={true}
-
-                    expandedContent="The prototype was encased in a PVC tube acting as a shell. We had a 12V battery that powered a DC motor using a LM298 H-bridge controller which received signals from an Arduino Nano. The Nano also took inputs from an on/off toggle push button and an up/down toggle push button. We also had a photoresistor that would turn off the motor when it had dug 1.5' into the sand."
+                    expandedContent="The prototype was encased in a PVC tube acting as a shell. We used a 12V battery to power a DC motor via an LM298 H-bridge controller, which received signals from an Arduino Nano. The Nano also took inputs from an on/off toggle push button and an up/down toggle push button. Additionally, a photoresistor turned off the motor once it had buried 1.5' into the sand."
                 />
-
                 <MediaTextSection
                     mediaType="image"
                     mediaSrc="/photos/PCB.jpeg"
                     title="Building the Final Product - Electronics"
-                    description="Taking the lessons we learned from our first prototype, we started building the final product with new materials "
+                    description="Taking the lessons we learned from our first prototype, we started building the final product with new materials."
                     imageAlt="team"
                     reverse={true}
-                    expandedContent="Our initial prototype's wiring was done on a protoboard, for the final we wanted to take it a step further and so we designed a PCB to house our electronics."
+                    expandedContent="Our initial prototype's wiring was done on a protoboard. For the final product, we designed a custom PCB to house our electronics, providing a more robust and organized design."
                 />
-
-
-
                 <MediaTextSection
                     mediaType="video"
                     mediaSrc="/videos/force.mov"
                     title="Building the Final Product - Motor"
-                    description="We also learned that the torque of our motor wasn't up to the task of burying itself in sand. We decided to calculate the torque we would need."
+                    description="We learned that the torque of our motor wasn't up to the task of burying itself in sand. We calculated the required torque and made adjustments."
                     imageAlt="team"
                     reverse={false}
                     videoHeight="size-3/5"
@@ -65,11 +60,27 @@ export default function AboutPage() {
                     playsInline={true}
                     controls={false}
                     loop={true}
-                    expandedContent="We used a drill to drive our spike and found which torque setting worked. From there, we used a force sensor to measure the force needed to make the drill skip at that torque setting."
+                    expandedContent="Using a drill to drive our spike, we identified the optimal torque setting. We then measured the force required to make the drill skip at that torque setting with a force sensor to guide our motor selection."
+                />
+                <MediaTextSection
+                    mediaType="image"
+                    mediaSrc="/photos/root_app.png"
+                    title="Building the Final Product - SMART LEDs"
+                    description="We incorporated LED matrices as part of the SMART component, enabling dynamic interaction with users."
+                    imageAlt="SMART LEDs"
+                    reverse={true}
+                    expandedContent="Using an ESP32 microcontroller, we programmed the LED matrices to display various modes, such as UV Index, Party, and Relax. These modes were controlled via a Bluetooth-enabled mobile app that allowed users to switch modes seamlessly."
+                />
+                <MediaTextSection
+                    mediaType="image"
+                    mediaSrc="/photos/post-showcase.jpeg"
+                    title="Post-Showcase Work"
+                    description="After the showcase, we focused on refining the design and addressing feedback."
+                    imageAlt="post-showcase work"
+                    reverse={false}
+                    expandedContent="We worked on improving the durability of the spike's housing and optimizing the software for better responsiveness. Additionally, we explored integrating a solar charging feature to make the product more sustainable and self-sufficient."
                 />
             </div>
         </div>
-
-
     );
-} 
+}
