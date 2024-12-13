@@ -65,7 +65,7 @@ export default function ProjectPage() {
         <div className="container mx-auto py-24">
           <ProjectOverview />
           {/* <ProjectComponents />  old component tsx */}
-          <ThreeDViewer modelPath="/models/untitled9.glb" />
+          <ThreeDViewer modelPath="/models/ROOT.glb" />
           {/* <EngineeringProjectShowcase /> */}
           <ProjectDetails/>
           
