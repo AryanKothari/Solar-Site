@@ -9,11 +9,11 @@ const teamMembers = [
   {
     name: "Minha Kim",
     role: "Mechanical Engineer",
-    bio: "Engineer dedicated to solving intricate problems with efficiency and creativity, using technical expertise to design.",
+    bio: "Overall design of product, CAD of custom internal components, Integration of electronics, Testing",
     skills: ["CAD Design", "Mechanical Design", "Project Management", "3D Printing"],
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFdIk_PCHNJSQ/profile-displayphoto-shrink_800_800/B4DZOE.aLCHMAc-/0/1733102773569?e=1738800000&v=beta&t=i4vP1jhkpy89OiovECeed37PYNvsR9xWnvqOHZl6mdU",
     link: "https://www.linkedin.com/in/minha-kim-121ab41aa/",
-    reflection: "Working on ROOT allowed me to apply my engineering skills to a real-world problem while collaborating with an amazing team."
+    reflection: "This project taught me valuable lessons in design and execution. A major challenge was finalizing an idea we were excited about, which delayed prototyping. Starting earlier and seeking expert feedback could have saved time and reduced obstacles. During construction, precision was critical, especially when aligning electronics with external panels. The first iteration lacked a complete CAD assembly, making alignment difficult. In the second iteration, a full CAD model streamlined the process and improved accuracy. Overall, I learned the importance of early prototyping, attention to detail, and iterative design. Moving forward, I’ll prioritize faster prototyping and structured feedback to avoid delays."
   },
   {
     name: "Sarah Kate Ashton",
@@ -42,7 +42,6 @@ const teamMembers = [
     link: "https://joaomcarvalho.com",
     reflection: "Working on ROOT allowed me to apply my engineering skills to a real-world problem while collaborating with an amazing team."
   },
-  // Add more team members as needed
 ];
 
 function ExpandableText({ text }: { text: string }) {

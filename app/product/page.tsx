@@ -30,23 +30,36 @@ export default function ProductPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-            Key Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {['Automated Drilling', 'App Controlled LEDs', 'Connector for accessories'].map((feature, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{feature}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            ))}
-          </div>
+<section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
+      Key Features
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        { 
+          title: 'Automated Drilling', 
+          description: 'Effortlessly drill into sand with a motorized spike system that saves time and eliminates manual effort. Perfect for securely anchoring beach accessories in seconds.' 
+        },
+        { 
+          title: 'App Controlled LEDs', 
+          description: 'Control LED lighting modes via a mobile app for different occasions: Party, Relax, UV Index, or Off. Set the mood or display critical beach information with a tap.' 
+        },
+        { 
+          title: 'Connector for Accessories', 
+          description: 'Easily attach and secure beach accessories such as umbrellas, tables, or speakers using our versatile mounting connector. Designed for a seamless beach experience.'
+        }
+      ].map((feature, index) => (
+        <div key={index} className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{feature.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300">
+            {feature.description}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Specifications Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">

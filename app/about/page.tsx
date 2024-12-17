@@ -11,7 +11,8 @@ export default function AboutPage() {
                     mediaSrc="/photos/sprint.jpeg"
                     title="Individual and Team Goals"
                     description="Before working together on this project, our team outlined some goals for our product and ourselves."
-                    imageAlt="team"
+                    imageAlt="te
+                    awam"
                     expandedContent="We knew we wanted to create a finished product that we could be proud of—something that moved beyond the prototype phase to a high-quality, functional design that an end user could envision purchasing. Our Product Design Project Plan was built around key individual and team goals that drove every phase of development, primarily focused on ensuring the product was not only functional but also aesthetically pleasing and polished—something that could theoretically be sold in stores and leave a lasting impression."
                 />
                 <MediaTextSection
@@ -78,7 +79,7 @@ export default function AboutPage() {
                     description="After the showcase, we focused on refining the design and addressing feedback."
                     imageAlt="post-showcase work"
                     reverse={false}
-                    expandedContent="We worked on improving the durability of the spike's housing and optimizing the software for better responsiveness. Additionally, we explored integrating a solar charging feature to make the product more sustainable and self-sufficient."
+                    expandedContent="Based on the feedback we received from Tyler and Becky following the showcase, we decided to dedicate an additional week to refining the ROOT. The primary areas of improvement focused on enhancing both functionality and overall build quality. First, we added off-board charging to make the device more convenient and user-friendly. We also focused on improving the build quality by ensuring that all components were securely enclosed, giving the ROOT a cleaner and more polished appearance. To enhance usability, we redesigned the controls by consolidating them into a single on/off button and a separate up/down button for simplified operation. Additionally, we improved the accessories and locking mechanism to ensure better stability and ease of use. As an optional enhancement, we considered sharpening the spike to make it less dull for more efficient use in sandy or tough conditions. These changes addressed the feedback directly and significantly elevated the ROOT's overall design and user experience."
                 />
             </div>
         </div>
