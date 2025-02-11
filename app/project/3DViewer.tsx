@@ -20,7 +20,8 @@ const ThreeDViewer: React.FC<ThreeDViewerProps> = ({
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const currentRef = mountRef.current; // ✅ Store in a variable
+    if (!currentRef) return;
 
     // Scene setup
     const scene = new THREE.Scene();
