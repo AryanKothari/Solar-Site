@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Project Info */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">The Root</h3>
+            <h3 className="text-lg font-semibold">Solar Canopy Charger</h3>
             <p className="text-sm text-muted-foreground">
-              Making beaches more fun with innovative anchoring technology.
+              Umbrella-like design with built-in battery storage, device charging (phones/laptops), picnic table compatibility, and durable panel-connected cloth.
             </p>
           </div>
 
@@ -46,10 +46,10 @@ const Footer = () => {
                 Duke University
               </li>
               <li className="text-sm text-muted-foreground">
-                Wilkinson Building Garage Lab
+                Hudson Hall
               </li>
               <li className="text-sm text-muted-foreground">
-                joao.carvalho@duke.edu
+                aryan.kothari@duke.edu
               </li>
             </ul>
           </div>
@@ -58,13 +58,10 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="https://github.com/Joaomc15" className="text-muted-foreground hover:text-primary">
-                <Github className="h-5 w-5" />
-              </Link>
-              <Link href="https://www.linkedin.com/in/joaomcarv/" className="text-muted-foreground hover:text-primary">
+              <Link href="https://www.linkedin.com/in/akothari12/" className="text-muted-foreground hover:text-primary">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="mailto:joao.carvalho@duke.edu" className="text-muted-foreground hover:text-primary">
+              <Link href="mailto:aryan.kothari@duke.edu" className="text-muted-foreground hover:text-primary">
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
@@ -74,7 +71,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t mt-12 pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {currentYear} The Root. All rights reserved.
+            © {currentYear} Solar Canopy. All rights reserved.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-muted-foreground mb-8">
-          Have feedback or questions about the Root? We&apos;d love to hear from you.
+          Have feedback or questions about the Solar Canopy? We&apos;d love to hear from you.
         </p>
         <ContactForm />
       </div>

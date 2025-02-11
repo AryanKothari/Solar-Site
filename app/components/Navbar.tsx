@@ -7,12 +7,12 @@ export function Navbar() {
     <nav className="navbar z-50">
       <div className="navbar-container mx-auto">
         <div className="mr-8">
-          <Link href="/" className="navbar-brand navbar-brand-large">Root</Link>
+          <Link href="/" className="navbar-brand navbar-brand-large">Solar Canopy</Link>
         </div>
         <div className="flex gap-6">
-          <Link href="/about" className="navbar-link">About</Link>
+          <Link href="/about" className="navbar-link">Project Overview</Link>
           <Link href="/team" className="navbar-link">Team</Link>
-          <Link href="/project" className="navbar-link">Project</Link>
+          <Link href="/project" className="navbar-link">Next Steps</Link>
         </div>
         <div className="ml-auto">
           <Button asChild variant="default">

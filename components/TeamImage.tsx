@@ -33,7 +33,7 @@ export default function TeamImage() {
     >
       {/* Base unblurred image */}
       <Image
-        src="/photos/team-pic.JPG"
+        src="/photos/hero.jpg"
         alt="The Root team"
         fill
         className="object-cover"

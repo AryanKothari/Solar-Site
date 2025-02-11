@@ -21,14 +21,14 @@ export default function HeroContent() {
       }`}
     >
       <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">
-        The Root
+        Solar Canopy
       </h1>
       <p className="text-xl text-muted-foreground max-w-[600px] mx-auto text-white">
-        Discover how we&apos;re changing the beach experience for vacationers.
+        Enabling the Duke community to charge devices using renewable energy source.
       </p>
       <div className="flex gap-4 mt-6">
         <Button size="lg" asChild>
-          <Link href="/project">View Project</Link>
+          <Link href="/project">Project Overview</Link>
         </Button>
         <Button size="lg" variant="outline" asChild>
           <Link href="/team">Meet the Team</Link>
