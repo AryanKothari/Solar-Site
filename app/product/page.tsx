@@ -20,18 +20,18 @@ export default function ProductPage() {
     ],
   };
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Power Consumption Over Time',
-      },
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top", // ✅ Change this to a valid position
     },
-  };
+    title: {
+      display: true,
+      text: "Power Consumption Over Time",
+    },
+  },
+};
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 rounded-lg">
