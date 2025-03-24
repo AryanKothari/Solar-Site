@@ -36,7 +36,7 @@ export default function ProductPage() {
         setCo2EmissionsAvoided(Number((parseFloat(data.data.device_status["pm1:0"].aenergy.total) * 0.4).toFixed(2)));
         setDevicesChargedPerDay(Math.round(parseFloat(data.data.device_status["pm1:0"].aenergy.total) / 0.015));
       } catch (error) {
-        console.error("Error fetching Shelly energy data:", error);
+        console.error("Error fetching Shelly energy data today:", error);
       }
     }
 
