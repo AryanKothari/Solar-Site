@@ -1,10 +1,8 @@
-// app/api/shellyCloud/route.js
-
 export async function GET() {
   try {
-    const deviceId = process.env.SHELLY_DEVICE_ID;
-    const authKey = process.env.SHELLY_AUTH_KEY;
-    const serverUri = process.env.SHELLY_CLOUD_SERVER_URI;
+    const deviceId = process.env.NEXT_PUBLIC_SHELLY_DEVICE_ID;
+    const authKey = process.env.NEXT_PUBLIC_SHELLY_AUTH_KEY;
+    const serverUri = process.env.NEXT_PUBLIC_SHELLY_CLOUD_SERVER_URI;
 
     const url = `https://${serverUri}/device/status?id=${deviceId}&auth_key=${authKey}`;
     
