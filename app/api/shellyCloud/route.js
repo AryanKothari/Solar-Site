@@ -1,6 +1,6 @@
 // app/api/shellyCloud/route.js
 
-export async function GET(request) {
+export async function GET() {
   try {
     const deviceId = process.env.SHELLY_DEVICE_ID;
     const authKey = process.env.SHELLY_AUTH_KEY;

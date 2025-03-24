@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -46,30 +45,6 @@ export default function ProductPage() {
     return () => clearInterval(interval);
   }, []); // ✅ Empty dependency array so it runs once
 
-  const powerConsumptionData = {
-    labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'],
-    datasets: [
-      {
-        label: 'Energy Consumption (kWh)',
-        data: [1.2, 2.3, 3.1, 4.0, 3.5, 2.8, 1.5],
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-      },
-    ],
-  };
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Power Consumption Over Time",
-      },
-    },
-  };
 
   const dashboardData = [
     {
@@ -101,18 +76,6 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 rounded-lg">
-      {/* Power Consumption Graph Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-            Cumulative Power Consumption
-          </h2>
-          <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-            <Line data={powerConsumptionData} options={options} />
-          </div>
-        </div>
-      </section>
-
       {/* Data Dashboard Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
