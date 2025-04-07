@@ -41,7 +41,9 @@ export default function ProductPage() {
 
   console.log("Raw Supabase data:", data);
   const formatted = data.map(d => ({
-    time: new Date(d.timestamp).toLocaleString(),
+    time: new Date(d.timestamp).toLocaleDateString(undefined, {
+  month: "short",
+  day: "numeric",}),
     value: d.value_wh,
   }));
 
@@ -69,12 +71,6 @@ export default function ProductPage() {
           ...prev.slice(-19),
           { time: new Date().toLocaleTimeString(), value: energy_offset }
         ]);
-
-        await fetch('/api/storeEnergy', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ value_wh: energy_offset }),
-        });
       } catch (error) {
         console.error("Error fetching Shelly energy data:", error);
       }

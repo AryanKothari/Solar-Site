@@ -1,13 +1,13 @@
 export async function GET() {
   try {
     console.log("🔍 Checking environment variables:");
-    console.log("🔹 Device ID:", process.env.NEXT_PUBLIC_SHELLY_DEVICE_ID);
-    console.log("🔹 Auth Key:", process.env.NEXT_PUBLIC_SHELLY_AUTH_KEY ? "Exists" : "Missing");
-    console.log("🔹 Server URI:", process.env.NEXT_PUBLIC_SHELLY_CLOUD_SERVER_URI);
+    console.log("🔹 Device ID:", process.env.SHELLY_DEVICE_ID);
+    console.log("🔹 Auth Key:", process.env.SHELLY_AUTH_KEY ? "Exists" : "Missing");
+    console.log("🔹 Server URI:", process.env.SHELLY_CLOUD_SERVER_URI);
 
-    const deviceId = process.env.NEXT_PUBLIC_SHELLY_DEVICE_ID;
-    const authKey = process.env.NEXT_PUBLIC_SHELLY_AUTH_KEY;
-    const serverUri = process.env.NEXT_PUBLIC_SHELLY_CLOUD_SERVER_URI;
+    const deviceId = process.env.SHELLY_DEVICE_ID;
+    const authKey = process.env.SHELLY_AUTH_KEY;
+    const serverUri = process.env.SHELLY_CLOUD_SERVER_URI;
 
     if (!deviceId || !authKey || !serverUri) {
       console.error("❌ Missing environment variables");
