@@ -176,7 +176,7 @@ export default function ProductPage() {
               { name: 'Solar Power', value: '500 W' },
               { name: 'Charge Controller', value: '40 A' },
               { name: 'Current Inverter', value: '750 W' },
-              { name: '[ONE MORE]', value: 'XXX' },
+              { name: 'Design Cost', value: '$1,059' },
             ].map((spec, index) => (
               <div key={index} className="flex justify-between items-center border-b border-gray-200 dark:border-gray-700 py-4">
                 <span className="font-medium text-gray-900 dark:text-gray-100">{spec.name}</span>
