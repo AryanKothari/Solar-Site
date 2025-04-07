@@ -25,32 +25,35 @@ export default function ProductPage() {
   const [isCharging, setIsCharging] = useState<boolean | null>(null);
   const [energyData, setEnergyData] = useState<Array<{ time: string; value: number }>>([]);
 
+  // Load historical data for the chart once
   useEffect(() => {
     async function loadInitialEnergyData() {
-  console.log("Fetching data from Supabase...");
+      const { data, error } = await supabase
+        .from('energy_data')
+        .select('*')
+        .order('timestamp', { ascending: true });
 
-  const { data, error } = await supabase
-    .from('energy_data')
-    .select('*')
-    .order('timestamp', { ascending: true });
+      if (error) {
+        console.error('Error loading initial energy data:', error);
+        return;
+      }
 
-  if (error) {
-    console.error('Supabase error:', error.message);
-    return;
-  }
+      const formatted = data.map(d => ({
+        time: new Date(d.timestamp).toLocaleDateString(undefined, {
+          month: "short",
+          day: "numeric",
+        }),
+        value: d.value_wh,
+      }));
 
-  console.log("Raw Supabase data:", data);
-  const formatted = data.map(d => ({
-    time: new Date(d.timestamp).toLocaleDateString(undefined, {
-  month: "short",
-  day: "numeric",}),
-    value: d.value_wh,
-  }));
+      setEnergyData(formatted);
+    }
 
-  setEnergyData(formatted);
-}
+    loadInitialEnergyData();
+  }, []);
 
-
+  // Poll live data for dashboard cards every 60s
+  useEffect(() => {
     async function fetchEnergyData() {
       try {
         const response = await fetch("/api/shellyCloud");
@@ -66,24 +69,14 @@ export default function ProductPage() {
         setGridEnergyOffset(energy_offset);
         setCo2EmissionsAvoided(energy_offset * 0.4 / 1000);
         setDevicesChargedPerDay(energy_offset / 15);
-
-        setEnergyData(prev => [
-          ...prev.slice(-19),
-          { time: new Date().toLocaleTimeString(), value: energy_offset }
-        ]);
       } catch (error) {
         console.error("Error fetching Shelly energy data:", error);
       }
     }
 
-    async function init() {
-      await loadInitialEnergyData();
-      await fetchEnergyData();
-      const interval = setInterval(fetchEnergyData, 60000);
-      return () => clearInterval(interval);
-    }
-
-    init();
+    fetchEnergyData();
+    const interval = setInterval(fetchEnergyData, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   const dashboardData = [
