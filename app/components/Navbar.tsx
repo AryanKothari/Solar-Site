@@ -10,9 +10,7 @@ export function Navbar() {
           <Link href="/" className="navbar-brand navbar-brand-large">Solar Canopy</Link>
         </div>
         <div className="flex gap-6">
-          <Link href="/about" className="navbar-link">Project Overview</Link>
           <Link href="/team" className="navbar-link">Team</Link>
-          <Link href="/project" className="navbar-link">Next Steps</Link>
         </div>
         <div className="ml-auto">
           <Button asChild variant="default">

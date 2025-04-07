@@ -9,17 +9,8 @@ export function Navbar() {
           <Link href="/" className="text-gray-900 dark:text-gray-100 text-xl font-bold">ProjectName</Link>
         </div>
         <div className="flex gap-6">
-          <Link href="/about" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
-            About
-          </Link>
           <Link href="/team" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
             Team
-          </Link>
-          <Link href="/project" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
-            Project
-          </Link>
-          <Link href="/product" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
-            Product
           </Link>
         </div>
         <div className="flex-1 flex justify-end pr-6">

@@ -27,9 +27,6 @@ export default function HeroContent() {
         Enabling the Duke community to charge devices using renewable energy source.
       </p>
       <div className="flex gap-4 mt-6">
-        <Button size="lg" asChild>
-          <Link href="/project">Project Overview</Link>
-        </Button>
         <Button size="lg" variant="outline" asChild>
           <Link href="/team">Meet the Team</Link>
         </Button>

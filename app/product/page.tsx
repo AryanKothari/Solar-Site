@@ -9,7 +9,10 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions
 } from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import { supabase } from '@/lib/supabase';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -20,8 +23,32 @@ export default function ProductPage() {
   const [co2EmissionsAvoided, setCo2EmissionsAvoided] = useState<number | null>(null);
   const [devicesChargedPerDay, setDevicesChargedPerDay] = useState<number | null>(null);
   const [isCharging, setIsCharging] = useState<boolean | null>(null);
+  const [energyData, setEnergyData] = useState<Array<{ time: string; value: number }>>([]);
 
   useEffect(() => {
+    async function loadInitialEnergyData() {
+  console.log("Fetching data from Supabase...");
+
+  const { data, error } = await supabase
+    .from('energy_data')
+    .select('*')
+    .order('timestamp', { ascending: true });
+
+  if (error) {
+    console.error('Supabase error:', error.message);
+    return;
+  }
+
+  console.log("Raw Supabase data:", data);
+  const formatted = data.map(d => ({
+    time: new Date(d.timestamp).toLocaleString(),
+    value: d.value_wh,
+  }));
+
+  setEnergyData(formatted);
+}
+
+
     async function fetchEnergyData() {
       try {
         const response = await fetch("/api/shellyCloud");
@@ -30,25 +57,42 @@ export default function ProductPage() {
 
         setOnlineStatus(data.data.online);
         const power = Number(data.data.device_status["pm1:0"].apower);
+        const energy_offset = Number(parseFloat(data.data.device_status["pm1:0"].aenergy.total).toFixed(2));
+
         setCurrentPower(power);
         setIsCharging(power > 0);
-        setGridEnergyOffset(Number(parseFloat(data.data.device_status["pm1:0"].aenergy.total).toFixed(2)));
-        setCo2EmissionsAvoided(Number((parseFloat(data.data.device_status["pm1:0"].aenergy.total) * 0.4).toFixed(2)));
-        setDevicesChargedPerDay(Math.round(parseFloat(data.data.device_status["pm1:0"].aenergy.total) / 0.015));
+        setGridEnergyOffset(energy_offset);
+        setCo2EmissionsAvoided(energy_offset * 0.4 / 1000);
+        setDevicesChargedPerDay(energy_offset / 15);
+
+        setEnergyData(prev => [
+          ...prev.slice(-19),
+          { time: new Date().toLocaleTimeString(), value: energy_offset }
+        ]);
+
+        await fetch('/api/storeEnergy', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ value_wh: energy_offset }),
+        });
       } catch (error) {
-        console.error("Error fetching Shelly energy data today:", error);
+        console.error("Error fetching Shelly energy data:", error);
       }
     }
 
-    fetchEnergyData();
-    const interval = setInterval(fetchEnergyData, 600000); // Update every minute
-    return () => clearInterval(interval);
-  }, []); // ✅ Empty dependency array so it runs once
+    async function init() {
+      await loadInitialEnergyData();
+      await fetchEnergyData();
+      const interval = setInterval(fetchEnergyData, 60000);
+      return () => clearInterval(interval);
+    }
 
+    init();
+  }, []);
 
   const dashboardData = [
     {
-      title: 'Online Status',
+      title: 'Operational Status',
       description: onlineStatus !== null ? (onlineStatus ? 'Online' : 'Offline') : 'Loading...'
     },
     {
@@ -60,23 +104,56 @@ export default function ProductPage() {
       description: isCharging !== null ? (isCharging ? 'Charging' : 'Not Charging') : 'Loading...'
     },
     {
-      title: 'Grid Energy Offset (kWh/year)',
-      description: gridEnergyOffset !== null ? `${gridEnergyOffset} kWh` : 'Loading...'
+      title: 'Grid Energy Offset (Wh)',
+      description: gridEnergyOffset !== null ? `${gridEnergyOffset} Wh` : 'Loading...'
     },
     {
-      title: 'CO₂ Emissions Avoided (kg/year)',
-      description: co2EmissionsAvoided !== null ? `${co2EmissionsAvoided} kg` : 'Loading...'
+      title: 'CO₂ Emissions Avoided (kg)',
+      description: co2EmissionsAvoided !== null ? `${co2EmissionsAvoided.toFixed(2)} kg` : 'Loading...'
     },
     {
-      title: 'Number of Devices Charged per Day',
-      description: devicesChargedPerDay !== null ? `${devicesChargedPerDay}` : 'Loading...'
+      title: 'Number of iPhones Charged',
+      description: devicesChargedPerDay !== null ? `${devicesChargedPerDay.toFixed(1)}` : 'Loading...'
     },
   ];
 
+  const chartData = {
+    labels: energyData.map(d => d.time),
+    datasets: [
+      {
+        label: 'Cumulative Grid Energy Offset (Wh)',
+        data: energyData.map(d => d.value),
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.2,
+      },
+    ],
+  };
+
+  const chartOptions: ChartOptions<'line'> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 rounded-lg">
-      {/* Data Dashboard Section */}
+      {/* Chart Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
+            Energy Offset Over Time
+          </h2>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <Line data={chartData} options={chartOptions} />
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
