@@ -134,7 +134,7 @@ export default function ProductPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-            Energy Offset Over Time
+            ⚡ Energy Offset Over Time
           </h2>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
             <Line data={chartData} options={chartOptions} />
@@ -146,7 +146,7 @@ export default function ProductPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-            Data Dashboard
+            📊 Data Dashboard
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {dashboardData.map((step, index) => (
@@ -167,7 +167,7 @@ export default function ProductPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-            Technical Specifications
+            🛠️ Technical Specifications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -186,6 +186,36 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
+      📸 Photo Gallery
+    </h2>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {[
+              "/images/solar1.jpg",
+              "/images/solar2.jpg",
+              "/images/solar3.jpg",
+              "/images/solar4.jpg",
+              "/images/solar5.jpg",
+              "/images/solar6.jpg",
+              "/images/solar7.jpg",
+             "/images/solar8.jpg",
+      ].map((src, index) => (
+        <div key={index} className="overflow-hidden rounded-lg shadow-md">
+          <img
+            src={src}
+            alt={`Gallery image ${index + 1}`}
+            className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      
     </div>
   );
 }
