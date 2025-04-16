@@ -172,8 +172,8 @@ export default function ProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { name: 'Charging Capacity', value: '300 W' },
-              { name: 'Storage Capacity', value: '1000 Wh' },
-              { name: 'Solar Power', value: '500 W' },
+              { name: 'Storage Capacity', value: '1280 Wh' },
+              { name: 'Solar Power', value: '400 W' },
               { name: 'Charge Controller', value: '40 A' },
               { name: 'Current Inverter', value: '750 W' },
               { name: 'Design Cost', value: '$1,059' },
