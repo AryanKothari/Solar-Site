@@ -81,27 +81,27 @@ export default function ProductPage() {
 
   const dashboardData = [
     {
-      title: 'Operational Status',
+      title: '⚙️ Operational Status',
       description: onlineStatus !== null ? (onlineStatus ? 'Online' : 'Offline') : 'Loading...'
     },
     {
-      title: 'Current Power Usage (W)',
+      title: '⚡ Current Power Usage (W)',
       description: currentPower !== null ? `${currentPower} W` : 'Loading...'
     },
     {
-      title: 'Charging Status',
+      title: '⏻ Charging Status',
       description: isCharging !== null ? (isCharging ? 'Charging' : 'Not Charging') : 'Loading...'
     },
     {
-      title: 'Grid Energy Offset (Wh)',
+      title: '🔌 Grid Energy Offset (Wh)',
       description: gridEnergyOffset !== null ? `${gridEnergyOffset} Wh` : 'Loading...'
     },
     {
-      title: 'CO₂ Emissions Avoided (kg)',
+      title: '🎯 CO₂ Emissions Avoided (kg)',
       description: co2EmissionsAvoided !== null ? `${co2EmissionsAvoided.toFixed(2)} kg` : 'Loading...'
     },
     {
-      title: 'Number of iPhones Charged',
+      title: '📱 Approx. Number of iPhones Charged',
       description: devicesChargedPerDay !== null ? `${devicesChargedPerDay.toFixed(1)}` : 'Loading...'
     },
   ];

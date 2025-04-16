@@ -7,7 +7,7 @@ export function Navbar() {
     <nav className="navbar z-50">
       <div className="navbar-container mx-auto">
         <div className="mr-8">
-          <Link href="/" className="navbar-brand navbar-brand-large">Solar Canopy</Link>
+          <Link href="/" className="navbar-brand navbar-brand-large">⛱ Solar Canopy</Link>
         </div>
         <div className="flex gap-6">
           <Link href="/team" className="navbar-link">Team</Link>
