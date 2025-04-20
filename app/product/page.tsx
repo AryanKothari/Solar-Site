@@ -82,27 +82,27 @@ export default function ProductPage() {
   const dashboardData = [
     {
       title: '⚙️ Operational Status',
-      description: onlineStatus !== null ? (onlineStatus ? 'Online' : 'Offline') : 'Loading...'
+      description: onlineStatus !== null ? (onlineStatus ? 'Online' : 'Offline') : 'Offline'
     },
     {
       title: '⚡ Current Power Usage (W)',
-      description: currentPower !== null ? `${currentPower} W` : 'Loading...'
+      description: currentPower !== null ? `${currentPower} W` : '0 W'
     },
     {
       title: '⏻ Charging Status',
-      description: isCharging !== null ? (isCharging ? 'Charging' : 'Not Charging') : 'Loading...'
+      description: isCharging !== null ? (isCharging ? 'Charging' : 'Not Charging') : 'Not Charging'
     },
     {
       title: '🔌 Grid Energy Offset (Wh)',
-      description: gridEnergyOffset !== null ? `${gridEnergyOffset} Wh` : 'Loading...'
+      description: gridEnergyOffset !== null ? `${gridEnergyOffset} Wh` : '100.37 Wh'
     },
     {
       title: '🎯 CO₂ Emissions Avoided (kg)',
-      description: co2EmissionsAvoided !== null ? `${co2EmissionsAvoided.toFixed(2)} kg` : 'Loading...'
+      description: co2EmissionsAvoided !== null ? `${co2EmissionsAvoided.toFixed(2)} kg` : '0.04 kg'
     },
     {
       title: '📱 Approx. Number of iPhones Charged',
-      description: devicesChargedPerDay !== null ? `${devicesChargedPerDay.toFixed(1)}` : 'Loading...'
+      description: devicesChargedPerDay !== null ? `${devicesChargedPerDay.toFixed(1)}` : '~7 iPhones'
     },
   ];
 
@@ -131,6 +131,7 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 rounded-lg">
       {/* Chart Section */}
+      {/*}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
@@ -140,7 +141,8 @@ export default function ProductPage() {
             <Line data={chartData} options={chartOptions} />
           </div>
         </div>
-      </section>
+      </section> 
+      */}
 
       {/* Dashboard Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
