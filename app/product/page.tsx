@@ -131,7 +131,6 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 rounded-lg">
       {/* Chart Section */}
-      {/*}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
@@ -142,7 +141,7 @@ export default function ProductPage() {
           </div>
         </div>
       </section> 
-      */}
+  
 
       {/* Dashboard Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
